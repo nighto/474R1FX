@@ -1,0 +1,9 @@
+474R1FX
+(C) 2008-2010 Arlindo Pereira <nighto@nighto.net>
+http://estudiolivre.org/atarifx
+
+A idéia do atarifx é ser um patch de PureData em "alto nível", que seja uma aproximação amigável de leigos à programação em diagramas. Tem este nome porque permitirá de forma extremamente simples a entrada de dados via joysticks :), mas mais do que isso, pretende explicar tudo, sem ser a "massaroca de fios" que a maioria dos patchs são, onde apenas o dono entende.
+
+No momento, permite apenas que se jogue entradas de vídeo tais como vídeo em quicktime, webcam (até 4) e noise na saída de vídeo, além da saída de áudio, podendo mixá-los.
+
+Para quem já usa o PD, não é nada demais, apenas um patch, com um intuito de simplificar o aprendizado ao fluxo de dados em PureData. Quando tiver "pronto" (quando achar que está legalzinho e sair do alpha), haverá um pacote debian/ubuntu, que instalará também o PD completo já com as libs e o Navalha.
