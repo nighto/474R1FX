@@ -1,0 +1,62 @@
+#N canvas 159 103 450 298 10;
+#X obj 6 9 inlet;
+#X obj 6 273 outlet;
+#X obj 6 130 pdp_spigot;
+#X obj 63 9 inlet;
+#X text 109 21 inlets: 1 video (pdp);
+#X text 157 31 2 toggle (ativa ou nao o efeito);
+#X obj 63 199 pdp_lens;
+#X text 109 5 LENS (pdp_lens);
+#X obj 232 151 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 75 118 hsl 30 10 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1300 1;
+#X obj 72 151 * 320;
+#X floatatom 99 131 5 0 0 0 - videox -;
+#X floatatom 139 131 5 0 0 0 - videoy -;
+#X obj 112 151 * 240;
+#X obj 115 77 hsl 30 10 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 689 1;
+#X text 157 41 3 number 0~1 (coordenada x);
+#X obj 112 90 * -1;
+#X obj 112 110 + 1;
+#X obj 72 57 inlet;
+#X obj 112 57 inlet;
+#X text 157 51 4 number 0~1 (coordenada y);
+#X floatatom 179 131 5 0 0 0 - videoy -;
+#X obj 152 151 * 240;
+#X obj 155 117 hsl 30 10 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1341 1;
+#X obj 152 97 inlet;
+#X obj 195 117 hsl 30 10 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1800 1;
+#X obj 192 97 inlet;
+#X obj 192 151 * 255;
+#X obj 232 123 inlet;
+#X text 157 71 6 number 0~1 (fator de zoom);
+#X text 157 81 7 toggle (quicando);
+#X text 157 61 5 number 0~1 (tamanho);
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 1 6 0;
+#X connect 3 0 2 1;
+#X connect 6 0 1 0;
+#X connect 8 0 6 5;
+#X connect 9 0 10 0;
+#X connect 10 0 6 1;
+#X connect 11 0 10 1;
+#X connect 12 0 13 1;
+#X connect 13 0 6 2;
+#X connect 14 0 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 13 0;
+#X connect 18 0 9 0;
+#X connect 19 0 14 0;
+#X connect 21 0 22 1;
+#X connect 22 0 6 3;
+#X connect 23 0 22 0;
+#X connect 24 0 23 0;
+#X connect 25 0 27 0;
+#X connect 26 0 25 0;
+#X connect 27 0 6 4;
+#X connect 28 0 8 0;

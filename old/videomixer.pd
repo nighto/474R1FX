@@ -1,0 +1,21 @@
+#N canvas 0 0 450 300 10;
+#X obj 46 50 cnv 15 171 36 empty empty VIDEOMIXER 2 7 1 8 -261224 -143491
+0;
+#X obj 51 66 hsl 162 15 0 1 0 0 empty empty empty -2 -8 0 10 -260818
+-258699 -1 0 1;
+#X obj 178 8 loadbang;
+#X obj 178 50 bng 10 250 50 0 empty empty Zera 12 6 1 8 -258699 -241291
+-128992;
+#X obj 110 108 inlet;
+#X obj 129 131 inlet;
+#X obj 110 182 pdp_mix;
+#X obj 110 210 outlet;
+#X msg 125 7 0.5;
+#X connect 1 0 6 2;
+#X connect 2 0 3 0;
+#X connect 3 0 8 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 1;
+#X connect 6 0 7 0;
+#X connect 8 0 1 0;
+#X coords 0 -1 1 1 175 40 2 44 48;

@@ -1,0 +1,60 @@
+#N canvas 0 0 450 300 10;
+#X obj 12 12 cnv 15 221 41 empty empty SAIDADEVIDEO 0 7 1 8 -225280
+-1109 0;
+#X obj 338 75 inlet;
+#X msg 424 75 destroy;
+#X obj 145 40 tgl 10 0 empty empty Cursor 15 5 1 8 -262144 -1 -1 0
+1;
+#X msg 480 74 cursor \$1;
+#X msg 376 75 create;
+#X obj 177 13 bng 10 250 50 0 empty empty Fechar 15 5 1 8 -258699 -1
+-1;
+#X obj 128 13 bng 10 250 50 0 empty empty Abrir 15 5 1 8 -24198 -1
+-1;
+#X msg 9 75 dim 160 120;
+#X msg 177 75 dim 640 480;
+#X msg 93 75 dim 320 240;
+#X msg 261 75 fullscreen;
+#X obj 13 28 bng 10 250 50 0 empty empty 160x120 15 5 1 8 -262144 -1
+-1;
+#X obj 78 27 bng 10 250 50 0 empty empty 320x240 15 5 1 8 -262144 -1
+-1;
+#X obj 145 27 bng 10 250 50 0 empty empty 640x480 15 5 1 8 -262144
+-1 -1;
+#X obj 13 41 bng 10 250 50 0 empty empty Fullscreen 15 5 1 8 -262144
+-1 -1;
+#X text 391 135 se nao funcionar \, experimente trocar por;
+#X text 392 147 pdp_sdl ou pdp_xv;
+#X obj 338 141 pdp_xv;
+#X floatatom 52 197 5 0 0 0 videox - videox;
+#X obj 769 303 hsl 30 10 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 92 197 5 0 0 1 videoy - videoy;
+#X msg 14 114 160;
+#X msg 54 114 120;
+#X msg 94 114 320;
+#X msg 134 114 240;
+#X connect 1 0 18 0;
+#X connect 2 0 18 0;
+#X connect 3 0 4 0;
+#X connect 4 0 18 0;
+#X connect 5 0 18 0;
+#X connect 6 0 2 0;
+#X connect 7 0 5 0;
+#X connect 8 0 18 0;
+#X connect 8 0 22 0;
+#X connect 8 0 23 0;
+#X connect 9 0 18 0;
+#X connect 10 0 18 0;
+#X connect 10 0 24 0;
+#X connect 10 0 25 0;
+#X connect 11 0 18 0;
+#X connect 12 0 8 0;
+#X connect 13 0 10 0;
+#X connect 14 0 9 0;
+#X connect 15 0 11 0;
+#X connect 22 0 19 0;
+#X connect 23 0 21 0;
+#X connect 24 0 19 0;
+#X connect 25 0 21 0;
+#X coords 0 -1 1 1 226 46 2 10 10;

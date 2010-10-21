@@ -1,0 +1,41 @@
+#N canvas 767 360 450 300 10;
+#X obj 6 9 inlet;
+#X obj 6 234 outlet;
+#X obj 6 79 pdp_spigot;
+#X obj 63 45 inlet;
+#X obj 100 79 inlet;
+#X obj 139 79 inlet;
+#X text 109 25 inlets: 1 video (pdp);
+#X text 157 35 2 toggle (ativa ou nao o efeito);
+#X obj 63 160 pdp_intrusion;
+#X obj 139 121 metro 100;
+#X floatatom 215 144 5 0 0 0 - - -;
+#X text 152 160 Threshold [0 \, 255 ] default 10;
+#X obj 139 101 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 100 138 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 109 5 INTRUSION (pdp_intrusion);
+#X text 157 45 3 bang (setar fundo);
+#X text 157 55 4 toggle (iniciar metro de setar fundo);
+#X obj 242 127 * 255;
+#X text 156 103 to start comparing;
+#X text 156 94 Set background;
+#X obj 279 117 hsl 50 10 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 331 100 inlet;
+#X text 157 65 5 number 0~1 (thresold);
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 1 8 0;
+#X connect 3 0 2 1;
+#X connect 4 0 13 0;
+#X connect 5 0 12 0;
+#X connect 8 0 1 0;
+#X connect 9 0 13 0;
+#X connect 10 0 8 2;
+#X connect 12 0 9 0;
+#X connect 13 0 8 1;
+#X connect 17 0 10 0;
+#X connect 20 0 17 0;
+#X connect 21 0 20 0;

@@ -1,0 +1,129 @@
+#N canvas 60 311 707 321 10;
+#X obj 12 12 cnv 15 446 24 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 11 10 Controle;
+#X floatatom 299 284 5 0 0 1 ms - -;
+#X obj 301 245 /;
+#X floatatom 244 185 5 0 0 0 - - -;
+#X obj 294 95 loadbang;
+#X msg 279 134 set 1000;
+#X floatatom 389 165 5 0 0 1 fps - -;
+#X msg 294 203 1000;
+#X obj 361 96 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 133 10 5 0 0 1 ms - -;
+#X floatatom 71 10 5 0 0 1 fps - -;
+#X obj 57 102 outlet;
+#X msg 395 126 set 25;
+#X msg 419 190 set 40;
+#X msg 454 125 set 29.97;
+#X msg 484 191 set 33.38;
+#X obj 415 95 bng 15 250 50 0 empty empty PAL 17 7 0 10 -262144 -1
+-1;
+#X obj 476 96 bng 15 250 50 0 empty empty NTSC 17 7 0 10 -262144 -1
+-1;
+#X obj 550 96 bng 15 250 50 0 empty empty WEB 17 7 0 10 -262144 -1
+-1;
+#X msg 546 125 set 15;
+#X msg 564 189 set 76.92;
+#X obj 190 12 bng 10 250 50 0 empty empty PAL 15 5 1 8 -262131 -1 -1
+;
+#X obj 230 12 bng 10 250 50 0 empty empty NTSC 15 5 1 8 -225271 -1
+-1;
+#X obj 282 12 bng 10 250 50 0 empty empty WEB 15 5 0 8 -225280 -1 -1
+;
+#X text 9 347 1000/fps = ms (Exemplo: 25 frames por segundo (PAL) =
+40 milisegundos por frame;
+#X obj 674 94 bng 15 250 50 0 empty empty Lento 17 7 0 10 -262144 -1
+-1;
+#X msg 675 124 set 2;
+#X obj 596 97 bng 15 250 50 0 empty empty Rapidao 17 7 0 10 -262144
+-1 -1;
+#X obj 321 12 bng 10 250 50 0 empty empty Rapido 15 5 0 8 -228992 -1
+-1;
+#X obj 382 12 bng 10 250 50 0 empty empty Lento 15 5 0 8 -257472 -1
+-1;
+#X msg 597 127 set 75;
+#X msg 588 221 set 13.33;
+#X msg 614 252 set 500;
+#X obj 42 70 r metro;
+#X text 8 143 Essa bagunca serve unicamente;
+#X text 12 156 para gerar um numero que sera;
+#X text 8 169 utilizado por todos os objetos;
+#X text 10 180 de video \, que eh a frequencia;
+#X text 11 191 com que os quadros sao tocados.;
+#X obj 57 45 inlet;
+#X obj 219 25 hsl 225 10 0 100 0 0 empty empty empty -2 -8 0 10 -24198
+-1 -1 5600 1;
+#X text 13 212 Parece bem dificil \, mas nao eh \,;
+#X text 14 224 so tem tantos fios por causa da;
+#X text 11 234 caixinha. Tente fazer voce mesmo;
+#X text 16 246 do zero!;
+#X obj 606 14 loadbang;
+#X text 68 130 comment;
+#X text 11 21 de Velocidade dos Vídeos;
+#X connect 2 0 10 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 5 0 8 0;
+#X connect 5 0 13 0;
+#X connect 5 0 14 0;
+#X connect 6 0 4 0;
+#X connect 6 0 8 0;
+#X connect 7 0 3 1;
+#X connect 7 0 8 0;
+#X connect 7 0 11 0;
+#X connect 8 0 3 0;
+#X connect 9 0 6 0;
+#X connect 9 0 8 0;
+#X connect 9 0 13 0;
+#X connect 9 0 14 0;
+#X connect 10 0 12 0;
+#X connect 11 0 8 0;
+#X connect 11 0 3 1;
+#X connect 13 0 7 0;
+#X connect 13 0 11 0;
+#X connect 13 0 41 0;
+#X connect 14 0 2 0;
+#X connect 14 0 10 0;
+#X connect 15 0 7 0;
+#X connect 15 0 11 0;
+#X connect 15 0 41 0;
+#X connect 16 0 2 0;
+#X connect 16 0 10 0;
+#X connect 17 0 13 0;
+#X connect 17 0 14 0;
+#X connect 18 0 15 0;
+#X connect 18 0 16 0;
+#X connect 19 0 20 0;
+#X connect 19 0 21 0;
+#X connect 20 0 11 0;
+#X connect 20 0 7 0;
+#X connect 20 0 41 0;
+#X connect 21 0 10 0;
+#X connect 21 0 2 0;
+#X connect 22 0 17 0;
+#X connect 23 0 18 0;
+#X connect 24 0 19 0;
+#X connect 26 0 27 0;
+#X connect 26 0 33 0;
+#X connect 27 0 7 0;
+#X connect 27 0 11 0;
+#X connect 27 0 41 0;
+#X connect 28 0 31 0;
+#X connect 28 0 32 0;
+#X connect 29 0 28 0;
+#X connect 30 0 26 0;
+#X connect 31 0 7 0;
+#X connect 31 0 11 0;
+#X connect 31 0 41 0;
+#X connect 32 0 2 0;
+#X connect 32 0 10 0;
+#X connect 33 0 2 0;
+#X connect 33 0 10 0;
+#X connect 34 0 12 0;
+#X connect 40 0 12 0;
+#X connect 41 0 11 0;
+#X connect 46 0 17 0;
+#X coords 0 -1 1 1 450 28 2 10 10;

@@ -1,0 +1,165 @@
+#N canvas 706 114 921 569 10;
+#X obj 7 15 inlet;
+#X obj 7 539 outlet;
+#X obj 7 513 pdp_spigot;
+#X obj 173 13 cnv 15 284 194 empty empty EFFECTBOX 115 8 0 10 -232576
+-86277 0;
+#X obj 177 42 tgl 10 0 empty ascii ascii 12 4 0 10 -262144 -1 -1 0
+1;
+#X obj 177 56 tgl 10 0 empty disintegration disintegration 12 4 0 10
+-262144 -1 -1 0 1;
+#X obj 177 70 tgl 10 0 empty dot dot 12 4 0 10 -262144 -1 -1 0 1;
+#X text 174 191 variaveis:;
+#X obj 224 42 tgl 10 0 empty asciicolor color 12 4 0 10 -262144 -1
+-1 0 1;
+#X obj 211 70 hradio 10 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 177 84 tgl 10 0 empty imgloader imgloader 12 4 0 10 -262144
+-1 -1 0 1;
+#X obj 245 84 bng 10 250 50 0 empty imgloaderabrir abrir 12 4 0 10
+-262144 -1 -1;
+#X obj 193 96 hsl 20 10 0 1 0 0 empty imgloaderx x 23 4 0 10 -262144
+-1 -1 0 1;
+#X obj 228 96 hsl 20 10 0 1 0 0 empty imgloadery y 23 4 0 10 -262144
+-1 -1 1900 1;
+#X obj 263 96 hsl 20 10 0 1 0 0 empty imgloadera a 23 4 0 10 -262144
+-1 -1 1900 1;
+#X obj 268 41 hradio 10 1 0 4 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 7 41 efeitos/ascii;
+#X text 166 211 argumentos dos efeitos seguem o padrão:;
+#X text 166 221 video (pdp) \, ativa (toggle) \, [parâmetros];
+#X obj 7 67 efeitos/disintegration;
+#X obj 7 93 efeitos/dot;
+#X obj 7 119 efeitos/imgloader;
+#X obj 7 145 efeitos/coolnoise1;
+#X obj 177 130 tgl 10 0 empty coolnoise1 coolnoise1 12 4 0 10 -262144
+-1 -1 0 1;
+#X obj 253 130 hsl 20 10 0 1 0 0 empty coolnoise1tempo tempo 23 4 0
+10 -262144 -1 -1 0 1;
+#X obj 7 171 efeitos/coolnoise2;
+#X obj 177 144 tgl 10 0 empty coolnoise2 coolnoise2 12 4 0 10 -262144
+-1 -1 0 1;
+#X obj 253 144 hsl 20 10 0 1 0 0 empty coolnoise2tempo tempo 23 4 0
+10 -262144 -1 -1 0 1;
+#X obj 7 197 efeitos/coolnoise3;
+#X obj 177 158 tgl 10 0 empty coolnoise3 coolnoise3 12 4 0 10 -262144
+-1 -1 0 1;
+#X obj 253 158 hsl 20 10 0 1 0 0 empty coolnoise3tempo tempo 23 4 0
+10 -262144 -1 -1 0 1;
+#X obj 193 173 hsl 20 10 0 1 0 0 empty coolnoise3rotacao rotaÃ§Ã£o
+23 4 0 10 -262144 -1 -1 0 1;
+#X obj 263 173 hsl 20 10 0 1 0 0 empty coolnoise3zoom zoom 23 4 0 10
+-262144 -1 -1 0 1;
+#X text 226 25 PiDiP;
+#X text 226 115 Noise;
+#X text 367 25 EffecTV;
+#X text 280 191 nome+[nome_efeito_sem_acento];
+#X obj 7 223 efeitos/aging;
+#X obj 327 41 tgl 10 0 empty aging aging 12 4 0 10 -262144 -1 -1 0
+1;
+#X obj 380 41 hsl 20 10 0 1 0 0 empty agingd d 23 4 0 10 -262144 -1
+-1 0 1;
+#X obj 415 41 hsl 20 10 0 1 0 0 empty agings s 23 4 0 10 -262144 -1
+-1 0 1;
+#X obj 7 249 efeitos/baltan;
+#X obj 314 29 cnv 3 3 160 empty empty empty 20 12 0 14 -159808 -66577
+0;
+#X obj 327 56 tgl 10 0 empty baltan baltan 12 4 0 10 -262144 -1 -1
+0 1;
+#X text 166 236 parâmetros \, se existirem \, variam de efeito;
+#X text 166 246 para efeito. em geral são toggles \,;
+#X obj 7 276 efeitos/cycle;
+#X obj 327 70 tgl 10 0 empty cycle cycle 12 4 0 10 -262144 -1 -1 0
+1;
+#X obj 377 70 tgl 10 0 empty cycley y 12 4 0 10 -262144 -1 -1 0 1;
+#X obj 398 70 tgl 10 0 empty cycleu u 12 4 0 10 -262144 -1 -1 0 1;
+#X obj 419 70 tgl 10 0 empty cyclev v 12 4 0 10 -262144 -1 -1 0 1;
+#X obj 7 303 efeitos/dice;
+#X obj 327 85 tgl 10 0 empty dice dice 12 4 0 10 -262144 -1 -1 0 1
+;
+#X obj 377 85 hradio 10 1 0 6 empty diced d 62 5 0 10 -262144 -1 -1
+0;
+#X text 166 256 números inteiros de 0 a n (hradio) e;
+#X text 166 266 números reais de 0 a 1 (hslider).;
+#X obj 7 330 efeitos/edge;
+#X obj 327 100 tgl 10 0 empty edge edge 12 4 0 10 -262144 -1 -1 0 1
+;
+#X obj 7 358 efeitos/intrusion;
+#X obj 327 115 tgl 10 0 empty intrusion intrusion 12 4 0 10 -262144
+-1 -1 0 1;
+#X obj 360 130 tgl 10 0 empty intrusionbm bm 12 4 0 10 -262144 -1 -1
+0 1;
+#X obj 339 130 bng 10 250 50 0 empty intrusionb b 12 4 0 10 -262144
+-1 -1;
+#X obj 391 130 hsl 40 10 0 1 0 0 empty intrusiont t 43 4 0 10 -262144
+-1 -1 0 1;
+#X obj 7 386 efeitos/lens;
+#X obj 327 145 tgl 10 0 empty lens lens 12 4 0 10 -262144 -1 -1 0 1
+;
+#X obj 370 145 hsl 20 10 0 1 0 0 empty lensx x 23 4 0 10 -262144 -1
+-1 1300 1;
+#X obj 405 145 hsl 20 10 0 1 0 0 empty lensy y 23 4 0 10 -262144 -1
+-1 1500 1;
+#X obj 342 159 hsl 20 10 0 1 0 0 empty lenst t 23 4 0 10 -262144 -1
+-1 1900 1;
+#X obj 407 159 tgl 10 0 empty lensq q 12 4 0 10 -262144 -1 -1 0 1;
+#X obj 375 159 hsl 20 10 0 1 0 0 empty lensz z 23 4 0 10 -262144 -1
+-1 0 1;
+#X connect 0 0 16 0;
+#X connect 2 0 1 0;
+#X connect 4 0 16 1;
+#X connect 5 0 19 1;
+#X connect 6 0 20 1;
+#X connect 8 0 16 2;
+#X connect 9 0 20 2;
+#X connect 10 0 21 1;
+#X connect 11 0 21 2;
+#X connect 12 0 21 3;
+#X connect 13 0 21 4;
+#X connect 14 0 21 5;
+#X connect 15 0 16 3;
+#X connect 16 0 19 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 25 0;
+#X connect 23 0 22 1;
+#X connect 24 0 22 2;
+#X connect 25 0 28 0;
+#X connect 26 0 25 1;
+#X connect 27 0 25 2;
+#X connect 28 0 37 0;
+#X connect 29 0 28 1;
+#X connect 30 0 28 2;
+#X connect 31 0 28 3;
+#X connect 32 0 28 4;
+#X connect 37 0 41 0;
+#X connect 38 0 37 1;
+#X connect 39 0 37 2;
+#X connect 40 0 37 3;
+#X connect 41 0 46 0;
+#X connect 43 0 41 1;
+#X connect 46 0 51 0;
+#X connect 47 0 46 1;
+#X connect 48 0 46 2;
+#X connect 49 0 46 3;
+#X connect 50 0 46 4;
+#X connect 51 0 56 0;
+#X connect 52 0 51 1;
+#X connect 53 0 51 2;
+#X connect 56 0 58 0;
+#X connect 57 0 56 1;
+#X connect 58 0 63 0;
+#X connect 59 0 58 1;
+#X connect 60 0 58 3;
+#X connect 61 0 58 2;
+#X connect 62 0 58 4;
+#X connect 63 0 2 0;
+#X connect 64 0 63 1;
+#X connect 65 0 63 2;
+#X connect 66 0 63 3;
+#X connect 67 0 63 4;
+#X connect 68 0 63 6;
+#X connect 69 0 63 5;
+#X coords 0 -1 1 1 290 200 2 170 10;

@@ -1,0 +1,14 @@
+#N canvas 661 328 450 299 10;
+#X obj 6 9 inlet;
+#X obj 6 224 outlet;
+#X obj 6 79 pdp_spigot;
+#X obj 63 45 inlet;
+#X text 109 25 inlets: 1 video (pdp);
+#X text 157 35 2 toggle (ativa ou nao o efeito);
+#X obj 63 150 pdp_edge;
+#X text 109 5 EDGE (pdp_edge);
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 1 6 0;
+#X connect 3 0 2 1;
+#X connect 6 0 1 0;

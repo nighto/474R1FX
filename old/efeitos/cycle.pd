@@ -1,0 +1,35 @@
+#N canvas 661 328 450 299 10;
+#X obj 6 9 inlet;
+#X obj 6 224 outlet;
+#X obj 6 79 pdp_spigot;
+#X obj 63 45 inlet;
+#X text 109 25 inlets: 1 video (pdp);
+#X text 157 35 2 toggle (ativa ou nao o efeito);
+#X text 109 5 CYCLE (pdp_cycle);
+#X obj 63 150 pdp_cycle;
+#X obj 80 96 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 97 113 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 114 130 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X text 95 95 Cycle Y;
+#X text 112 112 Cycle U;
+#X text 129 128 Cycle V;
+#X obj 80 79 inlet;
+#X obj 114 79 inlet;
+#X obj 148 79 inlet;
+#X text 157 45 3 toggle (canal y);
+#X text 157 55 4 toggle (canal u);
+#X text 157 65 5 toggle (canal v);
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 1 7 0;
+#X connect 3 0 2 1;
+#X connect 7 0 1 0;
+#X connect 8 0 7 1;
+#X connect 9 0 7 2;
+#X connect 10 0 7 3;
+#X connect 14 0 8 0;
+#X connect 15 0 9 0;
+#X connect 16 0 10 0;

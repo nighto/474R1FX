@@ -1,0 +1,13 @@
+#N canvas 0 219 642 494 10;
+#X obj 15 400 saidadevideo;
+#X obj 15 176 effectbox;
+#X obj 313 112 interfaces;
+#X obj 15 15 playerdevideo;
+#X obj 174 82 noisegenerator;
+#X obj 174 45 controledevelocidadedosvideos;
+#X obj 178 15 videos/analogrecycling;
+#X obj 326 16 videos/analogrecycling2;
+#X connect 1 0 0 0;
+#X connect 3 0 1 0;
+#X connect 6 0 3 0;
+#X connect 7 0 3 0;

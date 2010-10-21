@@ -1,0 +1,42 @@
+#N canvas 798 159 450 388 10;
+#X obj 9 10 inlet;
+#X obj 9 356 outlet;
+#X obj 60 97 inlet;
+#X obj 34 231 pdp_mix 0.7;
+#X obj 82 157 metro 1000;
+#X obj 82 177 pdp_noise;
+#X obj 82 197 pdp_zoom 100;
+#X obj 60 120 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 139 75 inlet;
+#X obj 142 138 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 139 96 * 900;
+#X obj 139 117 + 100;
+#X text 74 9 Manipulações com pdp_noise;
+#X text 74 19 Por http://yourmachines.org/tutorials/pdvideolan.hml
+;
+#X text 74 34 inlets: 1 video (pdp);
+#X text 122 44 2 toggle (ativa ou nao o efeito);
+#X text 122 54 3 number 0~1 (temporizador do efeito);
+#X obj 34 288 pdp_mix 0.95;
+#X obj 76 263 pdp_del;
+#X text 74 -1 Cool Noise 2;
+#X obj 9 333 pdp_mix 0;
+#X connect 0 0 3 0;
+#X connect 0 0 20 0;
+#X connect 2 0 7 0;
+#X connect 3 0 17 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 3 1;
+#X connect 7 0 4 0;
+#X connect 7 0 20 2;
+#X connect 8 0 10 0;
+#X connect 9 0 4 1;
+#X connect 10 0 11 0;
+#X connect 11 0 9 0;
+#X connect 17 0 18 0;
+#X connect 17 0 20 1;
+#X connect 18 0 17 1;
+#X connect 20 0 1 0;
