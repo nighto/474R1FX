@@ -1,0 +1,885 @@
+#N canvas 0 25 459 295 10;
+#X text 0 -21 474R1FX;
+#N canvas 408 154 755 382 controle 0;
+#X text 11 10 Controle;
+#X floatatom 299 284 5 0 0 1 ms - -;
+#X obj 301 245 /;
+#X floatatom 244 185 5 0 0 0 - - -;
+#X obj 294 95 loadbang;
+#X msg 279 134 set 1000;
+#X floatatom 389 165 5 0 0 1 fps - -;
+#X msg 294 203 1000;
+#X obj 361 96 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 133 10 5 0 0 1 ms - -;
+#X floatatom 71 10 5 0 0 1 fps - -;
+#X text 70 23 Velocidade do video;
+#X obj 55 138 outlet;
+#X msg 395 126 set 25;
+#X msg 419 190 set 40;
+#X msg 454 125 set 29.97;
+#X msg 484 191 set 33.38;
+#X obj 415 95 bng 15 250 50 0 empty empty PAL 17 7 0 10 -262144 -1
+-1;
+#X obj 476 96 bng 15 250 50 0 empty empty NTSC 17 7 0 10 -262144 -1
+-1;
+#X obj 550 96 bng 15 250 50 0 empty empty WEB 17 7 0 10 -262144 -1
+-1;
+#X msg 546 125 set 15;
+#X msg 564 189 set 76.92;
+#X obj 190 12 bng 10 250 50 0 empty empty PAL 15 5 1 8 -262131 -1 -1
+;
+#X obj 230 12 bng 10 250 50 0 empty empty NTSC 15 5 1 8 -225271 -1
+-1;
+#X obj 282 12 bng 10 250 50 0 empty empty WEB 15 5 0 8 -225280 -1 -1
+;
+#X text 238 23 Padroes;
+#X text 109 316 1000/fps = ms (Exemplo: 25 frames por segundo (PAL)
+= 40 milisegundos por frame;
+#X obj 674 94 bng 15 250 50 0 empty empty Lento 17 7 0 10 -262144 -1
+-1;
+#X msg 675 124 set 2;
+#X obj 596 97 bng 15 250 50 0 empty empty Rapidao 17 7 0 10 -262144
+-1 -1;
+#X obj 321 12 bng 10 250 50 0 empty empty Rapido 15 5 0 8 -228992 -1
+-1;
+#X obj 382 12 bng 10 250 50 0 empty empty Lento 15 5 0 8 -257472 -1
+-1;
+#X msg 597 127 set 75;
+#X msg 588 221 set 13.33;
+#X msg 614 252 set 500;
+#X connect 1 0 9 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 4 0 7 0;
+#X connect 4 0 13 0;
+#X connect 4 0 14 0;
+#X connect 5 0 3 0;
+#X connect 5 0 7 0;
+#X connect 6 0 2 1;
+#X connect 6 0 7 0;
+#X connect 6 0 10 0;
+#X connect 7 0 2 0;
+#X connect 8 0 5 0;
+#X connect 8 0 7 0;
+#X connect 8 0 13 0;
+#X connect 8 0 14 0;
+#X connect 9 0 12 0;
+#X connect 10 0 7 0;
+#X connect 10 0 2 1;
+#X connect 13 0 6 0;
+#X connect 13 0 10 0;
+#X connect 14 0 1 0;
+#X connect 14 0 9 0;
+#X connect 15 0 6 0;
+#X connect 15 0 10 0;
+#X connect 16 0 1 0;
+#X connect 16 0 9 0;
+#X connect 17 0 13 0;
+#X connect 17 0 14 0;
+#X connect 18 0 15 0;
+#X connect 18 0 16 0;
+#X connect 19 0 20 0;
+#X connect 19 0 21 0;
+#X connect 20 0 10 0;
+#X connect 20 0 6 0;
+#X connect 21 0 9 0;
+#X connect 21 0 1 0;
+#X connect 22 0 17 0;
+#X connect 23 0 18 0;
+#X connect 24 0 19 0;
+#X connect 27 0 28 0;
+#X connect 27 0 34 0;
+#X connect 28 0 6 0;
+#X connect 28 0 10 0;
+#X connect 29 0 32 0;
+#X connect 29 0 33 0;
+#X connect 30 0 29 0;
+#X connect 31 0 27 0;
+#X connect 32 0 6 0;
+#X connect 32 0 10 0;
+#X connect 33 0 1 0;
+#X connect 33 0 9 0;
+#X connect 34 0 1 0;
+#X connect 34 0 9 0;
+#X coords 0 -1 1 1 450 28 2 10 10;
+#X restore 1 -6 pd controle;
+#N canvas 0 0 450 300 entrada 0;
+#X restore 798 343 pd entrada;
+#N canvas 0 0 450 300 efeitos 0;
+#X restore 797 380 pd efeitos;
+#N canvas 0 0 450 300 mixer 0;
+#X restore 797 410 pd mixer;
+#N canvas 0 0 630 218 saida 0;
+#X obj 339 76 inlet;
+#X obj 339 142 pdp_glx;
+#X msg 425 76 destroy;
+#X obj 146 41 tgl 10 0 empty empty Cursor 15 5 1 8 -262144 -1 -1 0
+1;
+#X msg 481 75 cursor \$1;
+#X msg 377 76 create;
+#X obj 178 14 bng 10 250 50 0 empty empty Fechar 15 5 1 8 -258699 -1
+-1;
+#X text 13 12 Saida de Video;
+#X obj 129 14 bng 10 250 50 0 empty empty Abrir 15 5 1 8 -24198 -1
+-1;
+#X msg 10 76 dim 160 120;
+#X msg 178 76 dim 640 480;
+#X msg 94 76 dim 320 240;
+#X msg 262 76 fullscreen;
+#X obj 14 29 bng 10 250 50 0 empty empty 160x120 15 5 1 8 -262144 -1
+-1;
+#X obj 79 28 bng 10 250 50 0 empty empty 320x240 15 5 1 8 -262144 -1
+-1;
+#X obj 146 28 bng 10 250 50 0 empty empty 640x480 15 5 1 8 -262144
+-1 -1;
+#X obj 14 42 bng 10 250 50 0 empty empty Fullscreen 15 5 1 8 -262144
+-1 -1;
+#X connect 0 0 1 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 2 0;
+#X connect 8 0 5 0;
+#X connect 9 0 1 0;
+#X connect 10 0 1 0;
+#X connect 11 0 1 0;
+#X connect 12 0 1 0;
+#X connect 13 0 9 0;
+#X connect 14 0 11 0;
+#X connect 15 0 10 0;
+#X connect 16 0 12 0;
+#X coords 0 -1 1 1 225 60 2 10 10;
+#X restore 1 210 pd saida;
+#N canvas 564 296 450 300 noise 0;
+#X obj 114 138 inlet;
+#X obj 14 250 outlet;
+#X obj 14 219 pdp_noise;
+#X obj 14 189 metro 40;
+#X msg 75 112 type yv12;
+#X msg 133 79 type grey;
+#X obj 13 13 cnv 15 120 41 empty empty NOISEGENERATOR 0 8 1 8 -241291
+-258699 0;
+#X obj 78 27 bng 10 250 50 0 empty empty Bate 15 5 1 8 -260818 -1 -1
+;
+#X obj 14 27 tgl 10 0 empty empty Ativa 15 5 1 8 -24198 -1 -1 0 1;
+#X obj 14 41 bng 10 250 50 0 empty empty Colorido 15 5 1 8 -44926 -1
+-1;
+#X obj 78 41 bng 10 250 50 0 empty empty PB 15 5 1 8 -166441 -1 -1
+;
+#X connect 0 0 3 1;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 7 0 2 0;
+#X connect 8 0 3 0;
+#X connect 9 0 4 0;
+#X connect 10 0 5 0;
+#X coords 0 -1 1 1 126 47 2 10 10;
+#X restore 1 64 pd noise;
+#N canvas 739 117 450 386 webcam 0;
+#X obj 14 321 pdp_v4l;
+#X obj 62 27 bng 10 250 50 0 empty empty Bate 15 5 1 8 -260818 -1 -1
+;
+#X obj 14 27 tgl 10 0 empty empty Ativa 15 5 1 8 -24198 -1 -1 0 1;
+#X obj 14 127 metro 40;
+#X obj 65 105 inlet;
+#X obj 14 344 outlet;
+#X text 13 10 Webcam;
+#X obj 62 13 hradio 10 1 0 4 empty empty empty 0 -8 0 10 -241291 -1
+-1 0;
+#X obj 124 114 sel 0 1 2 3;
+#X msg 74 152 close;
+#X msg 124 152 open /dev/video0;
+#X msg 142 169 open /dev/video1;
+#X msg 160 186 open /dev/video2;
+#X msg 179 203 open /dev/video3;
+#X obj 106 27 bng 10 250 50 0 empty empty Fecha 15 5 1 8 -258699 -1
+-1;
+#X msg 27 174 type yv12;
+#X msg 44 200 type grey;
+#X obj 14 41 bng 10 250 50 0 empty empty Colorido 15 5 1 8 -44926 -1
+-1;
+#X obj 78 41 bng 10 250 50 0 empty empty PB 15 5 1 8 -166441 -1 -1
+;
+#X connect 0 0 5 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 1;
+#X connect 7 0 8 0;
+#X connect 8 0 10 0;
+#X connect 8 1 11 0;
+#X connect 8 2 12 0;
+#X connect 8 3 13 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
+#X connect 13 0 0 0;
+#X connect 14 0 9 0;
+#X connect 15 0 0 0;
+#X connect 16 0 0 0;
+#X connect 17 0 15 0;
+#X connect 18 0 16 0;
+#X coords 0 -1 1 1 150 45 2 10 10;
+#X restore 138 65 pd webcam;
+#N canvas 695 326 450 300 ajuda 0;
+#X text 12 46 O 474R1FX tem como proposito \, antes de mais nada \,
+;
+#X text 14 105 Por exemplo: Se voce quiser mixar dois sinais de noise
+\,;
+#X text 14 118 basta duplicar a caixinha Noise Generator (Ctrl-D) e
+;
+#X text 157 21 474R1FX: Ajuda;
+#X text 14 130 ligar as saidas delas na entrada do Mixer:;
+#X text 12 58 simplificar o conceito de remendar (patch).;
+#X text 12 70 A ideia do programa eh ligar as caixinhas \, numa especie
+;
+#X text 13 82 de "patch em alto nivel".;
+#X coords 0 -1 1 1 400 200 2 10 10;
+#X restore 791 -2 pd ajuda;
+#N canvas 318 316 450 334 player 0;
+#X obj 81 25 bng 10 250 50 0 empty empty AbrirVideo 15 5 1 8 -250685
+-1 -1;
+#X obj 102 126 openpanel;
+#X msg 102 146 open \$1;
+#X obj 14 160 metro 40;
+#X obj 25 130 inlet;
+#X obj 93 243 outlet;
+#X obj 62 38 bng 10 250 50 0 empty empty Bate 15 5 1 8 -260818 -1 -1
+;
+#X obj 14 38 tgl 10 0 empty empty Ativa 15 5 1 8 -24198 -1 -1 0 1;
+#X obj 106 38 bng 10 250 50 0 empty empty Fecha 15 5 1 8 -258699 -1
+-1;
+#X msg 201 139 close;
+#X floatatom 82 64 4 0 0 0 Frames - -;
+#X floatatom 127 64 4 0 0 0 / - -;
+#X obj 93 218 pdp_yqt --------;
+#X obj 177 243 outlet~;
+#X obj 201 260 outlet~;
+#X obj 14 51 tgl 10 0 empty empty Loop 15 5 1 8 -241291 -1 -1 0 1;
+#X msg -18 186 loop \$1;
+#X obj 62 51 bng 10 250 50 0 empty empty Play 15 5 1 8 -261689 -1 -1
+;
+#X obj 106 51 bng 10 250 50 0 empty empty Stop 15 5 1 8 -261681 -1
+-1;
+#X msg 154 178 play;
+#X msg 201 178 stop;
+#X text 23 22 PLAYER;
+#X text 60 77 saidas;
+#X text 11 91 video;
+#X text 61 91 audioL;
+#X text 115 91 audioR;
+#X text 52 -2 entradas;
+#X text 12 9 controle;
+#X text 81 9 frame (pos);
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 12 0;
+#X connect 3 0 12 0;
+#X connect 4 0 3 1;
+#X connect 6 0 12 0;
+#X connect 7 0 3 0;
+#X connect 8 0 9 0;
+#X connect 9 0 12 0;
+#X connect 12 0 5 0;
+#X connect 12 1 10 0;
+#X connect 12 2 11 0;
+#X connect 12 4 13 0;
+#X connect 12 5 14 0;
+#X connect 15 0 16 0;
+#X connect 16 0 12 0;
+#X connect 17 0 19 0;
+#X connect 18 0 20 0;
+#X connect 19 0 12 0;
+#X connect 20 0 12 0;
+#X coords 0 -1 1 1 150 110 2 10 0;
+#X restore 302 61 pd player;
+#N canvas 558 292 450 300 saidaaudio 0;
+#X text 57 13 Saida de Audio;
+#X text 29 10 L;
+#X text 182 11 R;
+#X obj 58 32 hsl 100 30 0 1 0 0 empty empty empty -2 -8 0 10 -225271
+-1 -1 9900 1;
+#X obj 16 28 knob 32 32 0 1 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 3100 1;
+#X obj 171 29 knob 32 32 0 1 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 3100 1;
+#X obj 11 143 *~;
+#X obj 11 101 inlet~;
+#X obj 166 102 inlet~;
+#X obj 166 143 *~;
+#X obj 77 226 dac~;
+#X obj 269 21 loadbang;
+#X msg 269 46 1;
+#X text 268 64 Sopra o Funk!;
+#X connect 3 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 6 1;
+#X connect 5 0 9 1;
+#X connect 6 0 10 0;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 1;
+#X connect 11 0 12 0;
+#X connect 12 0 3 0;
+#X coords 0 -1 1 1 200 60 2 10 10;
+#X restore 251 210 pd saidaaudio;
+#N canvas 444 334 450 300 audiomixer 0;
+#X obj 76 93 hsl 150 20 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 76 119 hsl 64 10 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 162 120 hsl 64 10 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X restore 925 323 pd audiomixer;
+#N canvas 532 358 448 300 entradasom 0;
+#X obj 113 147 adc~;
+#X obj 93 184 outlet~;
+#X obj 155 183 outlet~;
+#X text 13 9 Entrada;
+#X text 18 20 de Som;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X coords 0 -1 1 1 60 25 2 10 10;
+#X restore 1118 277 pd entradasom;
+#N canvas 600 243 556 537 netreceive 0;
+#X obj 87 341 pdp_netreceive \$1;
+#X obj 87 380 outlet;
+#X floatatom 13 42 5 0 0 1 Porta - -;
+#X msg 290 62 set 9990;
+#X msg 303 82 set 9991;
+#X msg 316 102 set 9992;
+#X msg 329 122 set 9993;
+#X msg 342 142 set 9994;
+#X msg 355 162 set 9995;
+#X msg 368 182 set 9996;
+#X msg 381 202 set 9997;
+#X msg 394 222 set 9998;
+#X msg 407 242 set 9999;
+#X obj 13 24 hradio 15 1 0 10 empty empty empty 0 -8 0 10 -241291 -1
+-1 0;
+#X obj 291 5 select 0 1 2 3 4 5 6 7 8 9;
+#X text 12 10 Recebe videos pela rede;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 6 0 2 0;
+#X connect 7 0 2 0;
+#X connect 8 0 2 0;
+#X connect 9 0 2 0;
+#X connect 10 0 2 0;
+#X connect 11 0 2 0;
+#X connect 12 0 2 0;
+#X connect 13 0 14 0;
+#X connect 14 0 3 0;
+#X connect 14 1 4 0;
+#X connect 14 2 5 0;
+#X connect 14 3 6 0;
+#X connect 14 4 7 0;
+#X connect 14 5 8 0;
+#X connect 14 6 9 0;
+#X connect 14 7 10 0;
+#X connect 14 8 11 0;
+#X connect 14 9 12 0;
+#X coords 0 -1 1 1 170 50 2 10 10;
+#X restore 1007 359 pd netreceive;
+#N canvas 601 128 585 557 netsend 0;
+#X obj 88 290 pdp_netsend;
+#X msg 88 264 connect \$1 \$2;
+#X obj 87 229 pack 0 0;
+#X floatatom 13 42 5 0 0 1 Porta - -;
+#X msg 290 62 set 9990;
+#X msg 303 82 set 9991;
+#X msg 316 102 set 9992;
+#X msg 329 122 set 9993;
+#X msg 342 142 set 9994;
+#X msg 355 162 set 9995;
+#X msg 368 182 set 9996;
+#X msg 381 202 set 9997;
+#X msg 394 222 set 9998;
+#X msg 407 242 set 9999;
+#X obj 13 24 hradio 15 1 0 10 empty empty empty 0 -8 0 10 -241291 -1
+-1 0;
+#X obj 291 5 select 0 1 2 3 4 5 6 7 8 9;
+#X text 12 10 Manda video pela rede;
+#X obj 13 149 inlet;
+#X obj 87 194 inlet;
+#X connect 3 0 2 1;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 3 0;
+#X connect 8 0 3 0;
+#X connect 9 0 3 0;
+#X connect 10 0 3 0;
+#X connect 11 0 3 0;
+#X connect 12 0 3 0;
+#X connect 13 0 3 0;
+#X connect 14 0 15 0;
+#X connect 15 0 4 0;
+#X connect 15 1 5 0;
+#X connect 15 2 6 0;
+#X connect 15 3 7 0;
+#X connect 15 4 8 0;
+#X connect 15 5 9 0;
+#X connect 15 6 10 0;
+#X connect 15 7 11 0;
+#X connect 15 8 12 0;
+#X connect 15 9 13 0;
+#X connect 17 0 0 0;
+#X connect 18 0 2 0;
+#X restore 798 279 pd netsend;
+#N canvas 384 324 511 300 tecladinho-----------------------------------------------
+0;
+#X obj 2 4 key;
+#X floatatom 2 25 3 0 0 0 - - -;
+#X obj 22 90 outlet;
+#X obj 34 111 outlet;
+#X obj 48 132 outlet;
+#X obj 61 153 outlet;
+#X obj 74 90 outlet;
+#X obj 86 111 outlet;
+#X obj 100 132 outlet;
+#X obj 114 153 outlet;
+#X obj 127 90 outlet;
+#X obj 139 111 outlet;
+#X obj 153 132 outlet;
+#X obj 166 153 outlet;
+#X obj 179 90 outlet;
+#X obj 193 111 outlet;
+#X obj 206 132 outlet;
+#X obj 219 153 outlet;
+#X obj 232 90 outlet;
+#X obj 244 111 outlet;
+#X obj 258 132 outlet;
+#X obj 271 153 outlet;
+#X obj 285 90 outlet;
+#X obj 297 111 outlet;
+#X obj 311 132 outlet;
+#X obj 325 153 outlet;
+#X obj 337 89 outlet;
+#X obj 350 110 outlet;
+#X obj 364 131 outlet;
+#X obj 376 152 outlet;
+#X text 30 199 Tecladinho;
+#X obj 22 41 sel 113 119 101 114 116 121 117 105 111 112 91 93 97 115
+100 102 103 104 106 107 108 122 120 99 118 98 110 109;
+#X text 30 213 q w e r t y u i o p [ ] a s d f g h j k l z x c v b
+n m;
+#X connect 0 0 1 0;
+#X connect 0 0 31 0;
+#X connect 31 0 2 0;
+#X connect 31 1 3 0;
+#X connect 31 2 4 0;
+#X connect 31 3 5 0;
+#X connect 31 4 6 0;
+#X connect 31 5 7 0;
+#X connect 31 6 8 0;
+#X connect 31 7 9 0;
+#X connect 31 8 10 0;
+#X connect 31 9 11 0;
+#X connect 31 10 12 0;
+#X connect 31 11 13 0;
+#X connect 31 12 14 0;
+#X connect 31 13 15 0;
+#X connect 31 14 16 0;
+#X connect 31 15 17 0;
+#X connect 31 16 18 0;
+#X connect 31 17 19 0;
+#X connect 31 18 20 0;
+#X connect 31 19 21 0;
+#X connect 31 20 22 0;
+#X connect 31 21 23 0;
+#X connect 31 22 24 0;
+#X connect 31 23 25 0;
+#X connect 31 24 26 0;
+#X connect 31 25 27 0;
+#X connect 31 26 28 0;
+#X connect 31 27 29 0;
+#X coords 0 0 1 1 388 30 2 30 200;
+#X restore 714 288 pd tecladinho-----------------------------------------------
+;
+#N canvas 336 135 753 639 playerogg 0;
+#X obj 19 506 oggread~;
+#X obj 19 541 outlet~;
+#X obj 35 564 outlet~;
+#X obj 19 157 bng 10 250 50 0 empty empty Abrir 15 5 1 8 -262144 -1
+-1;
+#X obj 19 180 openpanel;
+#X msg 19 209 open \$1;
+#X floatatom 116 586 7 0 0 0 - - -;
+#X obj 63 435 bng 10 250 50 0 empty empty Tocar 15 5 1 8 -262144 -1
+-1;
+#X msg 57 451 start;
+#X msg 142 448 seek \$1;
+#X obj 123 358 spigot;
+#X obj 170 338 tgl 10 0 empty empty Loop 15 5 1 8 -262144 -1 -1 0 1
+;
+#X msg 29 407 stop;
+#X obj 193 519 min;
+#X msg 168 477 1e+06;
+#X floatatom 193 544 5 0 0 0 - - -;
+#X obj 44 314 spigot;
+#X obj 59 282 tgl 10 0 empty empty AutoPlay 15 5 1 8 -262144 -1 -1
+0 1;
+#X obj 17 3 bng 10 250 50 0 empty empty Abrir 15 5 1 8 -262144 -1 -1
+;
+#X obj 17 19 tgl 10 0 empty empty TocarAoAbrir 15 5 1 8 -262144 -1
+-1 0 1;
+#X obj 63 3 bng 10 250 50 0 empty empty Tocar 15 5 1 8 -262144 -1 -1
+;
+#X obj 29 391 bng 10 250 50 0 empty empty Parar 15 5 1 8 -262144 -1
+-1;
+#X obj 116 3 bng 10 250 50 0 empty empty Parar 15 5 1 8 -262144 -1
+-1;
+#X text 17 -12 PLAYER OGG (MUSICA);
+#X obj 170 3 tgl 10 0 empty empty RepetirNoFim 15 5 1 8 -262144 -1
+-1 0 1;
+#X floatatom 116 16 7 0 0 1 pos - -;
+#X text 6 108 estrutura basica;
+#X text 21 133 do oggread~;
+#X text 11 120 igualzinha a ajuda;
+#X text 12 581 saidas de som;
+#X text 100 599 posicao em s;
+#X obj 82 535 bng 10 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 98 532 <- indica;
+#X text 98 543 que acabou;
+#X text 98 554 o arquivo;
+#X text 8 236 se ativado \, da bang;
+#X text 8 246 em tocar assim que fecha;
+#X text 8 256 a janela de escolha de arquivo;
+#X text 171 350 se ativado \, da bang;
+#X text 171 361 em tocar assim que;
+#X text 171 373 termina o arquivo;
+#N canvas 311 258 449 417 loopplayerogg 0;
+#X obj 123 166 *;
+#X obj 126 124 hsl 64 10 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 111 197 5 0 0 0 - - -;
+#X obj 111 124 bng 10 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 145 146 5 0 0 0 - - -;
+#X obj 119 77 spigot;
+#X obj 119 63 tgl 10 0 empty empty Loop 15 5 1 8 -262144 -1 -1 0 1
+;
+#X obj 192 42 hsl 32 10 0 2.9 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3100 1;
+#X obj 119 98 delay 500;
+#X obj 181 77 * 1000;
+#X obj 185 56 + 0.01;
+#X obj 119 43 inlet;
+#X obj 206 119 inlet;
+#X obj 111 215 outlet;
+#X obj 27 15 hsl 48 10 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 82 15 hsl 32 10 0 2.99 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3100 1;
+#X text 232 52 Loop minimo de 1ms;
+#X text 232 63 para nao travar o PC;
+#X obj 12 15 bng 10 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 118 15 tgl 10 0 empty empty empty 15 5 1 8 -262144 -1 -1 0 1
+;
+#X msg 174 13 2.99;
+#X obj 214 13 loadbang;
+#X obj 12 51 inlet;
+#X text 15 91 pula para;
+#X text 14 104 o ponto de;
+#X text 30 116 loop;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 13 0;
+#X connect 3 0 2 0;
+#X connect 3 0 5 0;
+#X connect 4 0 0 1;
+#X connect 5 0 8 0;
+#X connect 6 0 5 1;
+#X connect 7 0 10 0;
+#X connect 8 0 3 0;
+#X connect 9 0 8 1;
+#X connect 10 0 9 0;
+#X connect 11 0 6 0;
+#X connect 11 0 19 0;
+#X connect 12 0 4 0;
+#X connect 14 0 1 0;
+#X connect 15 0 7 0;
+#X connect 18 0 3 0;
+#X connect 19 0 6 0;
+#X connect 20 0 15 0;
+#X connect 21 0 20 0;
+#X connect 22 0 18 0;
+#X coords 0 -1 1 1 120 20 2 10 10;
+#X restore 18 62 pd loopplayerogg;
+#X floatatom 193 16 5 0 0 1 total - -;
+#X text 194 561 detecta o tamanho do arquivo;
+#X text 195 573 no fim da reproducao deste;
+#X text 194 584 se voce souber o tamanho;
+#X text 194 595 (veja no terminal) coloque;
+#N canvas 311 258 449 417 loopplayerogg 0;
+#X obj 123 166 *;
+#X obj 126 124 hsl 64 10 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 111 197 5 0 0 0 - - -;
+#X obj 111 124 bng 10 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 145 146 5 0 0 0 - - -;
+#X obj 119 77 spigot;
+#X obj 119 63 tgl 10 0 empty empty Loop 15 5 1 8 -262144 -1 -1 0 1
+;
+#X obj 192 42 hsl 32 10 0 2.9 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3100 1;
+#X obj 119 98 delay 500;
+#X obj 181 77 * 1000;
+#X obj 185 56 + 0.01;
+#X obj 119 43 inlet;
+#X obj 206 119 inlet;
+#X obj 111 215 outlet;
+#X obj 27 15 hsl 48 10 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 82 15 hsl 32 10 0 2.99 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3100 1;
+#X text 232 52 Loop minimo de 1ms;
+#X text 232 63 para nao travar o PC;
+#X obj 12 15 bng 10 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 118 15 tgl 10 0 empty empty empty 15 5 1 8 -262144 -1 -1 0 1
+;
+#X msg 174 13 2.99;
+#X obj 214 13 loadbang;
+#X obj 12 51 inlet;
+#X text 15 91 pula para;
+#X text 14 104 o ponto de;
+#X text 30 116 loop;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 13 0;
+#X connect 3 0 2 0;
+#X connect 3 0 5 0;
+#X connect 4 0 0 1;
+#X connect 5 0 8 0;
+#X connect 6 0 5 1;
+#X connect 7 0 10 0;
+#X connect 8 0 3 0;
+#X connect 9 0 8 1;
+#X connect 10 0 9 0;
+#X connect 11 0 6 0;
+#X connect 11 0 19 0;
+#X connect 12 0 4 0;
+#X connect 14 0 1 0;
+#X connect 15 0 7 0;
+#X connect 18 0 3 0;
+#X connect 19 0 6 0;
+#X connect 20 0 15 0;
+#X connect 21 0 20 0;
+#X connect 22 0 18 0;
+#X coords 0 -1 1 1 120 20 2 10 10;
+#X restore 140 62 pd loopplayerogg;
+#N canvas 311 258 449 417 loopplayerogg 0;
+#X obj 123 166 *;
+#X obj 126 124 hsl 64 10 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 111 197 5 0 0 0 - - -;
+#X obj 111 124 bng 10 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 145 146 5 0 0 0 - - -;
+#X obj 119 77 spigot;
+#X obj 119 63 tgl 10 0 empty empty Loop 15 5 1 8 -262144 -1 -1 0 1
+;
+#X obj 192 42 hsl 32 10 0 2.9 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3100 1;
+#X obj 119 98 delay 500;
+#X obj 181 77 * 1000;
+#X obj 185 56 + 0.01;
+#X obj 119 43 inlet;
+#X obj 206 119 inlet;
+#X obj 111 215 outlet;
+#X obj 27 15 hsl 48 10 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 82 15 hsl 32 10 0 2.99 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3100 1;
+#X text 232 52 Loop minimo de 1ms;
+#X text 232 63 para nao travar o PC;
+#X obj 12 15 bng 10 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 118 15 tgl 10 0 empty empty empty 15 5 1 8 -262144 -1 -1 0 1
+;
+#X msg 174 13 2.99;
+#X obj 214 13 loadbang;
+#X obj 12 51 inlet;
+#X text 15 91 pula para;
+#X text 14 104 o ponto de;
+#X text 30 116 loop;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 13 0;
+#X connect 3 0 2 0;
+#X connect 3 0 5 0;
+#X connect 4 0 0 1;
+#X connect 5 0 8 0;
+#X connect 6 0 5 1;
+#X connect 7 0 10 0;
+#X connect 8 0 3 0;
+#X connect 9 0 8 1;
+#X connect 10 0 9 0;
+#X connect 11 0 6 0;
+#X connect 11 0 19 0;
+#X connect 12 0 4 0;
+#X connect 14 0 1 0;
+#X connect 15 0 7 0;
+#X connect 18 0 3 0;
+#X connect 19 0 6 0;
+#X connect 20 0 15 0;
+#X connect 21 0 20 0;
+#X connect 22 0 18 0;
+#X coords 0 -1 1 1 120 20 2 10 10;
+#X restore 18 84 pd loopplayerogg;
+#N canvas 311 258 449 417 loopplayerogg 0;
+#X obj 123 166 *;
+#X obj 126 124 hsl 64 10 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 111 197 5 0 0 0 - - -;
+#X obj 111 124 bng 10 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 145 146 5 0 0 0 - - -;
+#X obj 119 77 spigot;
+#X obj 119 63 tgl 10 0 empty empty Loop 15 5 1 8 -262144 -1 -1 0 1
+;
+#X obj 192 42 hsl 32 10 0 2.9 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3100 1;
+#X obj 119 98 delay 500;
+#X obj 181 77 * 1000;
+#X obj 185 56 + 0.01;
+#X obj 119 43 inlet;
+#X obj 206 119 inlet;
+#X obj 111 215 outlet;
+#X obj 27 15 hsl 48 10 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 82 15 hsl 32 10 0 2.99 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3100 1;
+#X text 232 52 Loop minimo de 1ms;
+#X text 232 63 para nao travar o PC;
+#X obj 12 15 bng 10 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 118 15 tgl 10 0 empty empty empty 15 5 1 8 -262144 -1 -1 0 1
+;
+#X msg 174 13 2.99;
+#X obj 214 13 loadbang;
+#X obj 12 51 inlet;
+#X text 15 91 pula para;
+#X text 14 104 o ponto de;
+#X text 30 116 loop;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 13 0;
+#X connect 3 0 2 0;
+#X connect 3 0 5 0;
+#X connect 4 0 0 1;
+#X connect 5 0 8 0;
+#X connect 6 0 5 1;
+#X connect 7 0 10 0;
+#X connect 8 0 3 0;
+#X connect 9 0 8 1;
+#X connect 10 0 9 0;
+#X connect 11 0 6 0;
+#X connect 11 0 19 0;
+#X connect 12 0 4 0;
+#X connect 14 0 1 0;
+#X connect 15 0 7 0;
+#X connect 18 0 3 0;
+#X connect 19 0 6 0;
+#X connect 20 0 15 0;
+#X connect 21 0 20 0;
+#X connect 22 0 18 0;
+#X coords 0 -1 1 1 120 20 2 10 10;
+#X restore 140 84 pd loopplayerogg;
+#X text 16 48 Loops:;
+#X obj 281 31 inlet;
+#X obj 291 41 inlet;
+#X obj 332 31 inlet;
+#X obj 342 41 inlet;
+#X obj 385 31 inlet;
+#X obj 395 41 inlet;
+#X obj 436 31 inlet;
+#X obj 446 41 inlet;
+#X obj 47 34 hsl 175 15 0 1 0 0 empty empty empty -2 -8 0 10 -1 -233017
+-1 0 1;
+#X obj 276 4 /;
+#X text 306 -12 pos/tot da numero de 0 a 1 que indica a posicao;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 0 2 6 0;
+#X connect 0 3 14 0;
+#X connect 0 3 31 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 5 0 16 0;
+#X connect 6 0 13 1;
+#X connect 6 0 25 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X connect 10 0 7 0;
+#X connect 11 0 10 1;
+#X connect 12 0 0 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 0;
+#X connect 15 0 42 0;
+#X connect 16 0 7 0;
+#X connect 17 0 16 1;
+#X connect 18 0 3 0;
+#X connect 19 0 17 0;
+#X connect 20 0 7 0;
+#X connect 21 0 12 0;
+#X connect 22 0 21 0;
+#X connect 24 0 11 0;
+#X connect 25 0 60 0;
+#X connect 31 0 10 0;
+#X connect 41 0 9 0;
+#X connect 42 0 41 2;
+#X connect 42 0 48 2;
+#X connect 42 0 47 2;
+#X connect 42 0 49 2;
+#X connect 42 0 60 1;
+#X connect 47 0 9 0;
+#X connect 48 0 9 0;
+#X connect 49 0 9 0;
+#X connect 51 0 41 0;
+#X connect 52 0 41 1;
+#X connect 53 0 47 0;
+#X connect 54 0 47 1;
+#X connect 55 0 48 0;
+#X connect 56 0 48 1;
+#X connect 57 0 49 0;
+#X connect 58 0 49 1;
+#X connect 60 0 59 0;
+#X coords 0 -1 1 1 255 120 2 12 -12;
+#X restore 713 455 pd playerogg;
+#X text 789 201 Repositorio de Elementos: (duplique \, arraste \, ligue
+\, pire!);
+#X connect 1 0 6 0;
+#X connect 1 0 7 0;
+#X connect 1 0 9 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 9 0 5 0;
+#X connect 9 1 10 0;
+#X connect 9 2 10 1;
+#X connect 15 0 16 0;
+#X connect 15 1 16 1;
+#X connect 15 2 16 2;
+#X connect 15 3 16 3;
+#X connect 15 4 16 4;
+#X connect 15 5 16 5;
+#X connect 15 6 16 6;
+#X connect 15 7 16 7;
